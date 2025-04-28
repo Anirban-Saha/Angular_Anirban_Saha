@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h2>Employee Management System</h2>
+  <button class="btn btn-primary mb-3" routerLink="/add">Add Employee</button>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Position</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees">
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.email }}</td>
+          <td>{{ emp.position }}</td>
+          <td>
+            <button class="btn btn-sm btn-warning me-2" (click)="editEmployee(emp._id)">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteEmployee(emp._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
